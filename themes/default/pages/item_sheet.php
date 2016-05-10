@@ -1,6 +1,6 @@
 <?php
 
-        <div class="panel-heading"><span class="glyphicon glyphicon-search"></span> Item Search</div>
+        $output .= '<div class="panel panel-primary"><div class="panel-heading"><span class="glyphicon glyphicon-search"></span> Item Search</div>
         <div class="panel-body">
           <table class="table">
             <thead>
@@ -18,7 +18,7 @@
                 <td><em>You Must enter more than 3 characters</em></td>
               </tr>';
 			}
-			elseif($item=='empty'){
+			elseif($items=='empty'){
 				              $output .= '
               <tr>
                 <td><em>No Items Found</em></td>
@@ -26,18 +26,18 @@
 			}
 			
             else{
-				foreach ($item as $items) {
+				foreach ($items as $itemb) {
 				 $output .= '
               <tr>
-                <td><em><a href="?id='.$items['itemid'].'">'.ucfirst(str_replace('_',' ',$items['sortname'])).' </a></td>
+                <td><em><a href="?id='.$itemb['itemid'].'">'.ucfirst(str_replace('_',' ',$itemb['sortname'])).' </a></td>
               </tr>';
 				}
             }
             $output .= '
             </tbody>
           </table>
-        </div>
       </div>
+	  </div>';
 $item = $item[0];
 
 
