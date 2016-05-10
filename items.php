@@ -10,6 +10,10 @@ if (!empty($_GET['id'])) {
     $itemid = $_GET['id'];
     $item = getItem($itemid);
     $page = "item_sheet";
+	
+	$itemname = $_POST['name'];
+	$itemids = str_replace(' ','_',$itemname);
+    $items = getItemList($itemids);
 }
 elseif(!isset($_POST['name'])) {
 	$page = "items";
